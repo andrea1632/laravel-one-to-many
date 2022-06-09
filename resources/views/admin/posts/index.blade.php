@@ -5,6 +5,11 @@
             @foreach ($posts as $post)
             <div class="col border m-1">
                 <h3>{{$post->title}}</h3>
+                @if($post->category)
+                    <span class="badge badge-pill badge-{{$post->Category->color}} ">{{$post->Category->label}}</span>
+                @else
+                    - 
+                @endif
                 <img src="{{$post->image}}" alt="">
                 <p>{{$post->description}}</p>
                 <div>

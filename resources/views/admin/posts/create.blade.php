@@ -10,6 +10,14 @@
                         <input type="text" name="title" placeholder="Inserisci il titolo">
                     </div>
                     <div class="form-group">
+                        <select name="category_id" id="category">
+                        <option value="">Nessuna Opzione</option>
+                        @foreach ($categories as $category)
+                            <option value="{{$category->id}}">{{$category->label}}</option>
+                        @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="description">descrizione del post</label>
                         <textarea name="description" id="description" cols="30" rows="10" placeholder="inserisci descrizione del post">
                         </textarea>
